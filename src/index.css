@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 0 10% 30%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 10% 30%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 10% 30%;
+
+    /* Primary: Deep Red from logo - lighter for softer appearance */
+    --primary: 0 68% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Lighter Red accent */
+    --secondary: 0 60% 56%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 8% 96%;
+    --muted-foreground: 0 10% 45%;
+
+    /* Accent: Medium Red from logo - lighter */
+    --accent: 0 70% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 10% 90%;
+    --input: 0 10% 90%;
+    --ring: 0 72% 42%;
+
+    --radius: 0.75rem;
+
+    /* Brand Colors - Red theme - lighter */
+    --brand-red: 0 68% 48%;
+    --brand-red-light: 0 55% 62%;
+    --brand-red-dark: 0 70% 38%;
+    --brand-red-soft: 0 45% 78%;
+    
+    /* Content color - warm grey for readability */
+    --content-text: 0 8% 38%;
+    
+    /* Gradients - lighter transitions */
+    --gradient-primary: linear-gradient(135deg, hsl(0 68% 48%) 0%, hsl(0 60% 56%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(0 55% 62%) 0%, hsl(0 60% 56%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(0 70% 38%) 0%, hsl(0 68% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 68% 48% / 0.88) 0%, hsl(0 60% 56% / 0.85) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(0 68% 48%) 0%, hsl(0 60% 56%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(0 70% 38%) 0%, hsl(0 68% 45%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(0 20% 20% / 0.06);
+    --shadow-md: 0 8px 24px -8px hsl(0 20% 20% / 0.10);
+    --shadow-lg: 0 16px 48px -16px hsl(0 20% 20% / 0.15);
+    --shadow-glow: 0 0 40px hsl(0 72% 42% / 0.25);
+    --shadow-red: 0 8px 30px -8px hsl(0 72% 42% / 0.20);
+
+    --sidebar-background: 0 0% 99%;
+    --sidebar-foreground: 0 8% 30%;
+    --sidebar-primary: 0 72% 42%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 8% 97%;
+    --sidebar-accent-foreground: 0 10% 30%;
+    --sidebar-border: 0 8% 92%;
+    --sidebar-ring: 0 65% 50%;
+  }
+
+  .dark {
+    --background: 0 30% 8%;
+    --foreground: 0 10% 95%;
+
+    --card: 0 30% 12%;
+    --card-foreground: 0 10% 95%;
+
+    --popover: 0 30% 12%;
+    --popover-foreground: 0 10% 95%;
+
+    --primary: 0 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 60% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 20% 18%;
+    --muted-foreground: 0 15% 60%;
+
+    --accent: 0 75% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 20% 20%;
+    --input: 0 20% 20%;
+    --ring: 0 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .container-wide {
+    @apply max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-cta {
+    background: var(--gradient-cta);
+  }
+
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background: var(--gradient-primary);
+  }
+
+  .text-gradient-red {
+    @apply bg-clip-text text-transparent;
+    background: var(--gradient-primary);
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-lg border border-border/50;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+  }
+
+  .bg-brand-light {
+    @apply bg-[hsl(0_20%_97%)];
+  }
+
+  .bg-brand-red {
+    background: hsl(var(--brand-red));
+  }
+
+  .bg-brand-red-light {
+    background: hsl(var(--brand-red-light));
+  }
+
+  .bg-brand-red-dark {
+    background: hsl(var(--brand-red-dark));
+  }
+
+  .text-brand-red {
+    color: hsl(var(--brand-red));
+  }
+
+  .text-brand-red-light {
+    color: hsl(var(--brand-red-light));
+  }
+
+  .border-brand-red {
+    border-color: hsl(var(--brand-red));
+  }
+}
+
+@layer utilities {
+  .shadow-brand {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-brand-lg {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-red {
+    box-shadow: var(--shadow-red);
+  }
+}
+
+/* Typewriter cursor animation */
+.typewriter-cursor {
+  @apply text-primary font-light ml-0.5;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typewriter-text {
+  @apply inline-flex items-center;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
+
+/* Nine dots cursor for buttons - red cursor for default, white for red buttons */
+.cursor-nine-dots {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='6' cy='6' r='2' fill='%23dc2626'/%3E%3Ccircle cx='12' cy='6' r='2' fill='%23dc2626'/%3E%3Ccircle cx='18' cy='6' r='2' fill='%23dc2626'/%3E%3Ccircle cx='6' cy='12' r='2' fill='%23dc2626'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23dc2626'/%3E%3Ccircle cx='18' cy='12' r='2' fill='%23dc2626'/%3E%3Ccircle cx='6' cy='18' r='2' fill='%23dc2626'/%3E%3Ccircle cx='12' cy='18' r='2' fill='%23dc2626'/%3E%3Ccircle cx='18' cy='18' r='2' fill='%23dc2626'/%3E%3C/svg%3E") 12 12, pointer;
+}
+
+.cursor-nine-dots-white {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='6' cy='6' r='2' fill='%23ffffff'/%3E%3Ccircle cx='12' cy='6' r='2' fill='%23ffffff'/%3E%3Ccircle cx='18' cy='6' r='2' fill='%23ffffff'/%3E%3Ccircle cx='6' cy='12' r='2' fill='%23ffffff'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23ffffff'/%3E%3Ccircle cx='18' cy='12' r='2' fill='%23ffffff'/%3E%3Ccircle cx='6' cy='18' r='2' fill='%23ffffff'/%3E%3Ccircle cx='12' cy='18' r='2' fill='%23ffffff'/%3E%3Ccircle cx='18' cy='18' r='2' fill='%23ffffff'/%3E%3C/svg%3E") 12 12, pointer;
+}
+
+/* Default red cursor for buttons */
+button:hover, 
+a[href]:hover button,
+.btn:hover,
+[role="button"]:hover {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='6' cy='6' r='2' fill='%23dc2626'/%3E%3Ccircle cx='12' cy='6' r='2' fill='%23dc2626'/%3E%3Ccircle cx='18' cy='6' r='2' fill='%23dc2626'/%3E%3Ccircle cx='6' cy='12' r='2' fill='%23dc2626'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23dc2626'/%3E%3Ccircle cx='18' cy='12' r='2' fill='%23dc2626'/%3E%3Ccircle cx='6' cy='18' r='2' fill='%23dc2626'/%3E%3Ccircle cx='12' cy='18' r='2' fill='%23dc2626'/%3E%3Ccircle cx='18' cy='18' r='2' fill='%23dc2626'/%3E%3C/svg%3E") 12 12, pointer;
+}
+
+/* White cursor for red/primary background buttons */
+.bg-primary:hover,
+.gradient-primary:hover,
+.gradient-cta:hover,
+.bg-accent:hover,
+button.bg-primary:hover,
+button.bg-accent:hover,
+button[class*="bg-primary"]:hover,
+button[class*="bg-accent"]:hover,
+button[class*="gradient-primary"]:hover,
+a[href] button.bg-primary:hover,
+a[href] button.bg-accent:hover,
+a[href] button[class*="bg-primary"]:hover,
+a[href] button[class*="bg-accent"]:hover,
+/* CTA and hero buttons with red backgrounds */
+[class*="variant-cta"]:hover,
+[class*="variant-hero"]:hover {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='6' cy='6' r='2' fill='%23ffffff'/%3E%3Ccircle cx='12' cy='6' r='2' fill='%23ffffff'/%3E%3Ccircle cx='18' cy='6' r='2' fill='%23ffffff'/%3E%3Ccircle cx='6' cy='12' r='2' fill='%23ffffff'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23ffffff'/%3E%3Ccircle cx='18' cy='12' r='2' fill='%23ffffff'/%3E%3Ccircle cx='6' cy='18' r='2' fill='%23ffffff'/%3E%3Ccircle cx='12' cy='18' r='2' fill='%23ffffff'/%3E%3Ccircle cx='18' cy='18' r='2' fill='%23ffffff'/%3E%3C/svg%3E") 12 12, pointer;
+}
