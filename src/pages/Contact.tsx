@@ -133,7 +133,7 @@ const Contact = () => {
     {
       icon: Building2,
       title: "Corporate Office",
-      content: "D2-37 Advik Tower\nVibhuti Khand, Gomti Nagar\nLucknow 226010",
+      content: "163, Prem Nagar Shahnazaf Road\nHazratganj - Lucknow 226001",
     },
     {
       icon: Building2,
@@ -420,7 +420,7 @@ const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-transparent h-20 z-10" />
           <div className="h-96 bg-muted relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0074674459277!2d81.0066!3d26.8688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be37eb0826741%3A0x34d9fbc38d8c7b27!2sGomti%20Nagar%2C%20Lucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
+              src="https://maps.google.com/maps?q=163%2C%20Prem%20Nagar%20Shahnazaf%20Road%20%2C%20Hazratganj%20-%20Lucknow%20226001&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

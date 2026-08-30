@@ -129,11 +129,9 @@ const Footer = () => {
                 <div>
                   <p className="text-white font-medium text-sm mb-1">Corporate Office</p>
                   <span className="text-white/80">
-                    D2-37 Advik Tower
+                    163, Prem Nagar Shahnazaf Road
                     <br />
-                    Vibhuti Khand, Gomti Nagar
-                    <br />
-                    Lucknow 226010
+                    Hazratganj - Lucknow 226001
                   </span>
                 </div>
               </li>
